@@ -9,6 +9,4 @@ dependencies:
   - dill
   - pandas
   - partd
-  - bokeh
-  - dask
   - mayavi

@@ -12,4 +12,4 @@ Be patient, it might take a few minutes while loading.
 
 1. Sample notebook
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Sample_notebook.ipynb)

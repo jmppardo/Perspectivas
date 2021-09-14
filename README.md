@@ -1,4 +1,4 @@
-# _Perspective over Computational and Applied Mathematics_. Repository for the subject
+# _Perspective over Computational and Applied Mathematics_. [Repository for the subject](https://github.com/jmppardo/Perspectivas)
 
 ## Description 
 

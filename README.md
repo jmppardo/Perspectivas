@@ -10,6 +10,11 @@ This repository will be updated whenever new material is available. The jupyter 
 
 Be patient, it might take a few minutes while loading.
 
-0. Blank Notebook</br>It can be used for practice if you are working on a computer that has not jupyter installed.</br>Note that any changes will be lost after the session closes.</br> [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Blank_Notebook.ipynb)
+- Blank Notebook</br>It can be used for practice if you are working on a computer that has not jupyter installed.</br>Note that any changes will be lost after the session closes.</br> [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Blank_Notebook.ipynb)
 
-1. Sample Notebook</br> [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Sample_notebook.ipynb)
+- First Lecture
+
+  1. Sample Notebook</br> [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Sample_notebook.ipynb)
+  2. Introduction to the Jupyter Notebook</br>[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Introduction.ipynb)
+  3. Exercises for the introduction</br>[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Practice_Introduction.ipynb)
+

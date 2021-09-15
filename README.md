@@ -10,6 +10,10 @@ This repository will be updated whenever new material is available. The jupyter 
 
 Be patient, it might take a few minutes while loading.
 
-1. Sample notebook
+0. Blank Notebook
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Blank_Notebook.ipynb)
+
+1. Sample Notebook
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Sample_notebook.ipynb)

@@ -17,4 +17,5 @@ Be patient, it might take a few minutes while loading.
   1. Sample Notebook</br> [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Sample_notebook.ipynb)
   2. Introduction to the Jupyter Notebook</br>[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Introduction.ipynb)
   3. Exercises for the introduction</br>[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Practice_Introduction.ipynb)
+  4. Solutions to the exercises for the introduction</br>[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Practice_Introduction_Solutions.ipynb)
 

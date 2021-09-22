@@ -19,3 +19,7 @@ Be patient, it might take a few minutes while loading.
   3. Exercises for the introduction</br>[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Practice_Introduction.ipynb)
   4. Solutions to the exercises for the introduction</br>[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Practice_Introduction_Solutions.ipynb)
 
+- Second Lecture
+
+  1. Introduction to Plotting in Python and Jupyter Notebook [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Introduction_to_Plotting_in_Python_and_Jupyter_Notebook.ipynb)
+  2. Exercises with Matplotlib [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Practice_Matplotlib.ipynb)

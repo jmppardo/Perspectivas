@@ -21,5 +21,5 @@ Be patient, it might take a few minutes while loading.
 
 - Second Lecture
 
-  1. Introduction to Plotting in Python and Jupyter Notebook [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Introduction_to_Plotting_in_Python_and_Jupyter_Notebook.ipynb)
-  2. Exercises with Matplotlib [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Practice_Matplotlib.ipynb)
+  1. Introduction to Plotting in Python and Jupyter Notebook</br> [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Introduction_to_Plotting_in_Python_and_Jupyter_Notebook.ipynb)
+  2. Exercises with Matplotlib</br> [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Practice_Matplotlib.ipynb)

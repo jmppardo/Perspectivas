@@ -12,4 +12,4 @@ dependencies:
   - pandas
   - partd
   - pip:
-    jupyterlab_latex
+    - jupyterlab_latex

@@ -25,7 +25,7 @@ Be patient, it might take a few minutes while loading.
   2. Exercises with Matplotlib</br> [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Practice_Matplotlib.ipynb)
   3. Solutions to the exercises with Matplotlib</br> [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Practice_Matplotlib_solutions.ipynb)
 
-- Third Lecture.</br> The widg
+- Third Lecture.
 
   1. Introduction to Python classes and ipywidgets</br> [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Interacting_with_the_notebook_with_ipywidgets.ipynb)
   2. Exercises with classes and ipywidgets </br> [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jmppardo/Perspectivas/HEAD?filepath=Notebooks/Practice_classes_ipywidgets.ipynb)

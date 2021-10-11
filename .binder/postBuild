@@ -9,5 +9,5 @@ echo $PWD check.txt
 
 # creates jupyter config file
 
-mkdir ../.jupyter
-cp jupyter_notebook_config.py .jupyter/jupyter_notebook_config.py
+mkdir .jupyter
+cp .binder/jupyter_notebook_config.py .jupyter/jupyter_notebook_config.py

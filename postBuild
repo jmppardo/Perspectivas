@@ -5,4 +5,4 @@ jupyter labextension install @jupyterlab/latex
 
 # prints current directory to check.txt
 
-echo $PWD > check.txt
+cp jupyter_notebook_config.py .jupyter/jupyter_notebook_config.py

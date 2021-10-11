@@ -2,3 +2,7 @@
 
 # install JupyterLab extension
 jupyter labextension install @jupyterlab/latex
+
+# prints current directory to check.txt
+
+echo $PWD > check.txt

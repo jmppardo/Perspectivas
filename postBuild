@@ -3,6 +3,7 @@
 # install JupyterLab extension
 jupyter labextension install @jupyterlab/latex
 
-# prints current directory to check.txt
+# creates jupyter config file
 
+mkdir .jupyter
 cp jupyter_notebook_config.py .jupyter/jupyter_notebook_config.py

@@ -4,12 +4,8 @@ channels:
 dependencies:
   - numpy
   - pip
-  - psutil
-  - toolz
   - matplotlib
-  - dill
   - jupyterlab
   - pandas
-  - partd
   - pip:
     - jupyterlab_latex

@@ -3,7 +3,11 @@
 # install JupyterLab extension
 jupyter labextension install @jupyterlab/latex
 
+# prints pwd to check.txt
+
+echo $PWD check.txt
+
 # creates jupyter config file
 
-mkdir .jupyter
+mkdir ../.jupyter
 cp jupyter_notebook_config.py .jupyter/jupyter_notebook_config.py

@@ -1,0 +1,33 @@
+\documentclass[a4paper]{article}
+%\documentclass[a4paper]{letter}
+%\documentclass[b5paper]{book}
+
+
+\begin{document}
+
+\LaTeX{} is a typesetting language. This means that it is a programming language whose main purpose is to produce documents that can be printed. When writing the writer uses plain text instead of formatted tex. This is in contrast with other word processors like Microsoft Word,  LibreOffice Writer and Apple Pages which commonly referred to as "What You See Is What You Get" processors (WYSIWG). 
+
+This is a minimal document in \LaTeX. It will just typeset some text. The \emph{class} of the document determines the general layout of the document. This is the first command in the document. This document uses the `article' class. Many classes share common structure. One important thing to use when writing documents is to structure the document in sections that help to organise the contents and thoughts. In \LaTeX{} this is done with sectioning commands.
+
+%\chapter{This is the first chapter of my Book} %When using the `book' class you can uncomment this line.
+
+\section{I am the first section}
+
+Commands in \LaTeX{} are preceded by a \textbackslash. These will not be characters that will be printed, but do special things instead. The \texttt{\textbackslash{}section} above creates a new section. Some commands require an argument which is passed with curly brackets $\{$, $\}$. Often, commands require optional arguments which are passed with square brackets [,].
+
+The differences between the classes include the subsections. For instance, the `letter' class does not include sections at all as it is intended for short documents. While the `book' class includes a \texttt{\textbackslash{}chapter} sectioning command. It is commented out because the `article' class doesn't have it. 
+
+By the way, in the source \LaTeX{} document comments are introduced with the \% symbol. Anything after it on a line will be ignored by the interpreter% like this text here.
+
+Play with the \% symbols in this document to check the result. Notice that with the `book' class you can use the line with \texttt{\textbackslash{}chapter} definition in the source code (line 12). Additionally you need to comment out all the sectioning commands when using the `letter' class, otherwise you will get an error.
+
+\section{I am the second section}
+
+You can see how \LaTeX{} handles automatically the numbering of the sections. 
+
+\subsection{There are subsections also}
+
+Like this one.
+
+
+\end{document}

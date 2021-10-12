@@ -1,0 +1,94 @@
+\documentclass{beamer}
+
+\usepackage{xcolor}
+\newcommand{\red}[1]{\color{red}#1}
+
+\usetheme{Madrid} %This command sets the theme for the slideshow.
+% There are many themes available. Check the documentation of beamer for a complete list. You can also modify them and produce your own.
+% Here is a short list that you can check: default, Madrid, CambridgeUS, JuanLesPins, Goettingen, Malmoe
+
+
+\begin{document}
+
+\title[Perspective A. \& C. Mathematics]{Perspective over Applied and Computational Mathematics}
+\subtitle{A slideshow using beamer}
+\author{A.U. Thor}
+\institute[UC3M]{Universidad Carlos III de Madrid}
+\date{\today}
+
+\maketitle %This command creates a new slide with the title
+
+\section{First section of the presentation}
+
+\frame{\tableofcontents} % This command creates a slide with the table of contents
+
+
+
+\begin{frame}
+  \frametitle{Frame Title}
+  \framesubtitle{Frame Subtitle}
+  
+  Anything that you can typeset in a latex document will fit here. This includes inline math $\cos(x)$ or displayed $$\int_a^b f(x) dx$$
+  \begin{enumerate}
+    \item First element
+    \item Second element
+  \end{enumerate}
+  
+  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Frame Title}
+  \framesubtitle{Frame Subtitle}
+  
+
+  I can write some more text here 
+
+  \begin{block}{Block title}
+    This serves to \alert{highlight} some content
+  \end{block}
+  
+  And also here
+
+
+\end{frame}
+
+
+
+\section{Second section of the presentation}
+
+\frame{\tableofcontents[currentsection]} %The option in the \tableofcontents command presents all but the current section semitransparent.
+
+
+\begin{frame}
+
+  \frametitle{How to introduce overlays I}
+  \begin{itemize}
+    \pause
+    \item First element
+    \pause
+    \item Second element
+  \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{How to introduce overlays II}
+
+
+  \textbf<2->{This line is bold only after slide 2}
+  
+  \uncover<4>{I am here but am no seen until the slide 4. I take my space in the slide}
+  
+  \alert<3->{This text gets highlighted after slide 3}
+  
+  \only<1>{This line is inserted only on slide 1.}
+  
+  \only<2>{This line is inserted only on slide 2.}
+    
+  \textit<2-3>{This line is slanted in the second and third slides}
+\end{frame}
+
+
+\end{document}

@@ -50,7 +50,7 @@
 Before we answer this question we are going to look at how did a printing press (J. Gutenberg ~1400a.d.) work. The glyphs were molded in small metals blocks like those appearing in Figure~\ref{fig:metalblockschase}. These blocks were used to compose a page by inserting them in a wooden chase, see Figure \ref{fig:metalblockschase}. First building words and then lines. The full chase was then covered with ink and introduced in the \emph{press} to print a page.
 %
 \begin{figure}[h]
-  \hfil\vbox{ \hbox{\includegraphics[width=.5\textwidth]{metal_blocks.jpg}} \vspace{1cm}}\hskip 0pt plus 0.5fil \includegraphics[width=.4\textwidth]{chase.jpg}\hfil
+  \hfil\vbox{ \hbox{\includegraphics[width=.5\textwidth]{glympse_figures/metal_blocks.jpg}} \vspace{1cm}}\hskip 0pt plus 0.5fil \includegraphics[width=.4\textwidth]{glympse_figures/chase.jpg}\hfil
   \caption{\emph{Left}: Metal blocks and chase used in a printer press. \emph{Right}: Chase where the metal blocks are inserted}\label{fig:metalblockschase}
 \end{figure}
 %
@@ -62,7 +62,7 @@ Before we answer this question we are going to look at how did a printing press 
 A box is a rectangular shaped object that has three numbers (also called dimensions) associated to it, \emph{width}, \emph{height} and \emph{depth}. These dimensions determine how big a box is and what its relative position to neighboring boxes will be.  The structure of a box can be seen in Figure~\ref{fig:box}. The baseline determines the imaginary line where characters lie. The height determines how high a character lies above the baseline and the depth determines how much it \emph{hangs} from the baseline. For instance, the box of the glyph ``h'' has a bigger height than the box of the glyph ``a'' and both of them have 0 depth. The box of the glyph ``g'' has the same height than the box of the glyph ``a'' but non-zero depth.
 %
 \begin{figure}[h]
-  \hfil\includegraphics[width=.7\textwidth]{box.png}\hfil
+  \hfil\includegraphics[width=.7\textwidth]{glympse_figures/box.png}\hfil
   \caption{A box and its dimensions. \emph{Source}: The \TeX{}book \cite{Knuth1990}\label{fig:box}}
 \end{figure}
 
@@ -87,16 +87,16 @@ No one expects the Spanish Inquisition! Our chief weapon is surprise, fear and s
 
 Whenever a paragraph starts or ends several things happen. There are some obvious formatting operations that occur, like adding the indentation on the first line of including extra space between the first line of a paragraph and the last line of the previous one. But there are many other things that occur internally and we will give a brief description of what happens with them. Before a paragraph starts the parser is in the so called \emph{vertical mode}. When the parser meets the first character of a paragraph it switches to horizontal mode and starts putting boxes together. First it collects all the non-white space characters that he finds up to the next white space character. The boxes are aligned at their reference points, so that they share the baseline. Once the word is complete a new box is defined that has height and depth the biggest height and depth of the boxes that compose it, and width the total sum of the widths of all the boxes. This is illustrated next with the word ``Perspective''.\\
 
-\noindent\hfil\includegraphics{word.pdf}\hfil\includegraphics{word_boxed.pdf}\hfil\\
+\noindent\hfil\includegraphics{glympse_figures/word.pdf}\hfil\includegraphics{glympse_figures/word_boxed.pdf}\hfil\\
 
 \noindent The different boxes of the words are then put together. Between the words, white space is added. As you can see in the example below white space is not a box of a given width without ink. This white space is called \emph{glue} and is what allows \TeX{} to print the justified blocks of text. We will speak about \emph{glue} later.\\
 
-\noindent\hfil\includegraphics{sentence.pdf}\hfil\\
+\noindent\hfil\includegraphics{glympse_figures/sentence.pdf}\hfil\\
 
 \noindent \TeX{} will continue to do so until it has finished parsing the full paragraph. At this time what \TeX{} has is a very long line representing the paragraph. It is now time to break the paragraph into lines. The \emph{glue}, i.e., the white space between words, has not a fixed length but instead can stretch or shrink to make the lines exactly as long as needed. \TeX{} has a complicated algorithm, cf. \cite[Chapter~14]{Knuth1990}, to decide where are the optimal points to break the paragraph into lines such that the outcome is as visually pleasant as possible. We are not going to enter in the details of this algorithm but at the end of this section we will discuss some basic things that will allow us to tune how it works.
 After the paragraph is broken into lines the parser goes into \emph{vertical mode}. This time, the boxes that make the lines are put vertically one after the other and there is also some \emph{glue} inserted between these boxes. You can get an idea with the following picture.\\ 
 
-\noindent\hfil\includegraphics{paragraph_boxed.pdf}\hfil\\
+\noindent\hfil\includegraphics{glympse_figures/paragraph_boxed.pdf}\hfil\\
 
 \noindent All that is missing is to stretch the glue to make all line boxes have the same length. The parser continues then in \emph{vertical mode} until the next paragraph starts. When there are enough lines to fit a page it is \emph{shipped} for printing. In principle \TeX{} could  use a similar algorithm than it uses for breaking a paragraph into lines to split the document into pages but it doesn't. When the lines have enough length to fit the page they are stretched or shrunk for the best output and the page is closed for shipping. This was done so because of memory considerations. Notice that the full document should be in memory to accomplish this and for a very large document this could be a problem.
 

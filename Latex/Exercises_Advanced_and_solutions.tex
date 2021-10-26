@@ -1,0 +1,167 @@
+% !TEX encoding = UTF-8 Unicode
+
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{pgffor} %provides the command \foreach
+\usepackage{mathtools} %provides \clap and mathmode versions of \mathrlap, \mathllap, and \mathclap
+
+\newcommand{\bs}[1]{{\rmfamily\color{blue}\textbackslash{}#1}}
+
+\newenvironment{example}[1]{%
+\vspace{10pt}
+\noindent\textbf{#1}\sffamily\par\vspace{10pt}%
+}
+{%
+\par\vspace{10pt}
+}
+
+\newenvironment{exercise}[1]{%
+\vspace{10pt}
+\noindent\textbf{#1}\par\vspace{10pt}%
+}
+{%
+\par\vspace{10pt}
+}
+
+
+\newlength{\glyphwd}
+\newcommand{\bx}[1]{%
+  \bgroup
+  \settowidth\glyphwd{#1}%
+  \setlength{\fboxrule}{0.1pt}% hairline
+  \setlength{\fboxsep}{-0.05pt}%
+  \makebox[0pt][l]{\vrule height 0.05pt depth 0.05pt width \glyphwd}%
+  \fbox{#1}%
+  \egroup
+}
+
+
+\title{A Glimpse on Advanced \LaTeX{}}
+\author{J.M. Pérez Pardo}
+\date{}
+
+
+\begin{document}
+
+
+\begin{exercise}{Exercise 1}
+Use a rule in a paragraph to increase the separation between two of the lines of the paragraph without any other modification.
+\end{exercise}
+
+\noindent \textbf{Solution:}
+
+No one expects the Spanish Inquisition! Our chief weapon is surprise, fear and surprise;\rule{0pt}{1in} two chief weapons, fear, surprise, and ruthless efficiency! Er, among our chief weapons are: fear, surprise, ruthless efficiency, and near fanatical devotion to the Pope! Um, I'll come in again\dots
+
+
+
+
+\begin{exercise}{Exercise 2}
+
+  The following paragraph was typed using the source code displayed after it:\\
+  
+  I am a line and lie above another line that has a very tall formula in it so both of the lines are separated from each other $e^{2^{n^2}}$. Rest of the line. Compare the spacing with the third line in the paragraph.
+
+
+  \begin{verbatim}
+  I am a line and lie above another line that has a very tall formula
+  in it so both of the lines are separated 
+  from each other $e^{2^{n^2}}$. Rest of the line. 
+  Compare the spacing with the third line in the paragraph.
+  \end{verbatim}
+  
+
+Notice that the separation between the first and the second line is bigger than the separation between the second and the third. What could we do in the source code to fix this?
+
+
+\end{exercise}
+
+\noindent \textbf{Solution a:}
+
+I am a line and lie above another line that has a very tall formula in it so both lines are separated from each other \smash{$e^{2^{n^{2}}}$}. Rest of the line. Compare the spacing with the third line in this paragraph\\
+
+
+\noindent \textbf{Solution b:}
+
+I am a line and lie above another line that has a very tall formula in it so both lines are separated from each other $e^{2^{n^{\tiny\raisebox{-1.5pt}{2}}}}$. Rest of the line. Compare the spacing with the third line in this paragraph
+
+\begin{exercise}{Exercise 3}
+Write a macro that typesets something as close as possible to the \TeX{} logo.
+\end{exercise}
+
+\noindent \textbf{Solution:}
+T\raisebox{-3pt}{\makebox[3pt][c]{E}}X
+
+\pagebreak
+\begin{exercise}{Exercise 4}
+Write a macro that prints the box and the baseline of a box, like the macro \bs{bx} but using only the tools presented in \bx{class}.
+\end{exercise}
+
+\noindent \textbf{Solution:} The definition of the command is in the source file.
+
+\newcommand{\bxx}[1]{%
+\newsavebox{\macrobox}%
+%
+\sbox{\macrobox}{#1}%
+\makebox[0pt][l]{\rule[-0.05pt]{\wd\macrobox}{0.1pt}}%
+\setlength{\fboxrule}{0.1pt}%
+\setlength{\fboxsep}{-0.05pt}%
+\fbox{\usebox{\macrobox}}%
+}
+
+
+\bxx{Paplo}
+
+\begin{exercise}{Exercise 5}
+Use a newenvironment to create an environment for printing code, like the one used last week.
+\end{exercise}
+
+\noindent \textbf{Solution:}
+We want to achieve something like this:\\
+
+\fcolorbox{blue}{black!30}{%
+\begin{minipage}{\textwidth}
+\ttfamily
+\color{blue}
+def function()
+
+\quad print("No on eexpects the Spanish Inquisition!")
+
+\end{minipage}
+}\\
+
+The definition of the command is in the source file.\\
+
+\newenvironment{code}{%
+\newsavebox{\codemacro}
+\setbox\codemacro\hbox\bgroup\begin{minipage}{\textwidth}
+\ttfamily
+\color{blue}
+}
+{%
+\end{minipage}
+\egroup
+\fcolorbox{blue}{black!30}{\usebox{\codemacro}}
+}
+
+
+
+\begin{code}
+def function()
+
+\quad print("No on eexpects the Spanish Inquisition!")
+\end{code}
+
+
+
+
+
+\end{document}
+
+
+

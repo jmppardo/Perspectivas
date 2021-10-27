@@ -7,5 +7,7 @@ dependencies:
   - matplotlib
   - jupyterlab
   - pandas
+  - seaborn
+  - scipy
   - pip:
     - jupyterlab_latex

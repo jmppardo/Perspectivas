@@ -9,5 +9,9 @@ dependencies:
   - pandas
   - seaborn
   - scipy
+  - sklearn
+  - skfuzzy
+  - pymysql
+  - google
   - pip:
     - jupyterlab_latex

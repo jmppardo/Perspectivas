@@ -51,15 +51,15 @@ Before we answer this question we are going to look at how did a printing press 
 %
 \begin{figure}[h]
   \hfil\vbox{ \hbox{\includegraphics[width=.5\textwidth]{glympse_figures/metal_blocks.jpg}} \vspace{1cm}}\hskip 0pt plus 0.5fil \includegraphics[width=.4\textwidth]{glympse_figures/chase.jpg}\hfil
-  \caption{\emph{Left}: Metal blocks and chase used in a printer press. \emph{Right}: Chase where the metal blocks are inserted}\label{fig:metalblockschase}
+  \caption{\emph{Left}: Metal blocks used in a printer press. \emph{Right}: Chase where the metal blocks are inserted}\label{fig:metalblockschase}
 \end{figure}
 %
 
-\TeX\ (and \LaTeX{}.) does actually a very similar thing to compose a document. Each glyph is contained in an invisible container called \emph{box} that has a rectangular shape. This box has given dimensions, \emph{width}, \emph{height} and \emph{depth} and determines how much space does it take. The \emph{ink} of the glyph is adjusted with respect to the box. The ink might even lie outside of the box. Actually \TeX\ does not care about the ink. All that matters to it are the boxes and their alignment. How the ink is placed with respect to the box is decided by the persons how designed the different fonts. When parsing the document, \TeX\ construct words putting all these boxes together and building bigger boxes. 
+\TeX\ (and \LaTeX{}.) does actually a very similar thing to compose a document. Each glyph is contained in an invisible container called \emph{box} that has a rectangular shape. This box has given dimensions, \emph{width}, \emph{height} and \emph{depth} and determines how much space does it take. The \emph{ink} of the glyph is adjusted with respect to the box. The ink might even lie outside of the box. Actually \TeX\ does not care about the ink. All that matters to it are the boxes and their alignment. How the ink is placed with respect to the box is decided by the persons who designed the different fonts. When parsing the document, \TeX\ construct words putting all these boxes together and building bigger boxes. 
 
 \section{Boxes}
 
-A box is a rectangular shaped object that has three numbers (also called dimensions) associated to it, \emph{width}, \emph{height} and \emph{depth}. These dimensions determine how big a box is and what its relative position to neighboring boxes will be.  The structure of a box can be seen in Figure~\ref{fig:box}. The baseline determines the imaginary line where characters lie. The height determines how high a character lies above the baseline and the depth determines how much it \emph{hangs} from the baseline. For instance, the box of the glyph ``h'' has a bigger height than the box of the glyph ``a'' and both of them have 0 depth. The box of the glyph ``g'' has the same height than the box of the glyph ``a'' but non-zero depth.
+A box is a rectangular shaped object that has three numbers (also called dimensions) associated to it, \emph{width}, \emph{height} and \emph{depth}. These dimensions determine how big a box is and what its relative position to neighbouring boxes will be.  The structure of a box can be seen in Figure~\ref{fig:box}. The baseline determines the imaginary line where characters lie. The height determines how high a character lies above the baseline and the depth determines how much it \emph{hangs} from the baseline. For instance, the box of the glyph ``h'' has a bigger height than the box of the glyph ``a'' and both of them have 0 depth. The box of the glyph ``g'' has the same height than the box of the glyph ``a'' but non-zero depth.
 %
 \begin{figure}[h]
   \hfil\includegraphics[width=.7\textwidth]{glympse_figures/box.png}\hfil
@@ -100,7 +100,7 @@ After the paragraph is broken into lines the parser goes into \emph{vertical mod
 
 \noindent All that is missing is to stretch the glue to make all line boxes have the same length. The parser continues then in \emph{vertical mode} until the next paragraph starts. When there are enough lines to fit a page it is \emph{shipped} for printing. In principle \TeX{} could  use a similar algorithm than it uses for breaking a paragraph into lines to split the document into pages but it doesn't. When the lines have enough length to fit the page they are stretched or shrunk for the best output and the page is closed for shipping. This was done so because of memory considerations. Notice that the full document should be in memory to accomplish this and for a very large document this could be a problem.
 
-We are going to give now some hints in how the paragraph breaking algorithm works. The fundamental idea is that breaking the paragraph at a point has a cost. This was called by D.E.~Knuth the \emph{badness}. The algorithm considers many possibilities of breaking the paragraph into lines and chooses the one with the minimum \emph{badness}. This works roughly as follows. If a line has to be stretched or shrunk to fit the page it gets a \emph{penalty} depending on how much it had to be stretched or shrunk. Other operations like hyphenating a word also have a \emph{penalty} and so on. The interesting thing about this is that penalties can be set by hand to force or prevent \TeX{} to take a line break. This is done with the \bs{penalty} command. Normally you do not need to take care about this but on occasions you might feel that a certain break is not appropriate and we will see what can be done in those cases. Typical penalties handled by \TeX{} are in a range between 10 and 10. A penalty of 10000  (\bs{penalty 10000}) or more is considered to be so large that \TeX{} will never break there. Penalties can be negative too. This makes certain breakpoints to be more desirable than others as the total badness will be diminished if the break point happens there. A penalty of -10000 (\bs{penalty -10000}) is considered to be so low that \TeX{} will always break there.\\
+We are going to give now some hints in how the paragraph breaking algorithm works. The fundamental idea is that breaking the paragraph at a point has a cost. This was called by D.E.~Knuth the \emph{badness}. The algorithm considers many possibilities of breaking the paragraph into lines and chooses the one with the minimum \emph{badness}. This works roughly as follows. If a line has to be stretched or shrunk to fit the page it gets a \emph{penalty} depending on how much it had to be stretched or shrunk. Other operations like hyphenating a word also have a \emph{penalty} and so on. The interesting thing about this is that penalties can be set by hand to force or prevent \TeX{} to take a line break. This is done with the \bs{penalty} command. Normally you do not need to take care about this but on occasions you might feel that a certain break is not appropriate and we will see what can be done in those cases. Typical penalties handled by \TeX{} are in a range between 10 and 1000. A penalty of 10000  (\bs{penalty 10000}) or more is considered to be so large that \TeX{} will never break there. Penalties can be negative too. This makes certain breakpoints to be more desirable than others as the total badness will be diminished if the break point happens there. A penalty of -10000 (\bs{penalty -10000}) is considered to be so low that \TeX{} will always break there.\\
 
 \begin{example}{A paragraph to be used as reference to see the effect of adding penalties.}
 No one expects the Spanish Inquisition! Our chief weapon is surprise, fear and surprise; two chief weapons, fear, surprise, and ruthless efficiency! Er, among our chief weapons are: fear, surprise, ruthless efficiency, and near fanatical devotion to the Pope! Um, I'll come in again\dots
@@ -124,7 +124,7 @@ No one expects the Spanish Inquisition! Our chief weapon is surprise, fear and{\
 No one expects the Spanish Inquisition! Our chief weapon is surprise, fear and surprise; two chief weapons, fear,{\penalty-10000} surprise, and ruthless efficiency! Er, among our chief weapons are: fear, surprise, ruthless efficiency, and near fanatical devotion to the Pope! Um, I'll come in again\dots
 \end{example}
 
-\noindent As expected we are forcing a line break there, but the line is stretched by a fairly large amount. Actually, this is almost what \TeX{} to force a line break when one types \bs{\bs{ }}, but the stretching needs to be corrected.
+\noindent As expected we are forcing a line break there, but the line is stretched by a fairly large amount. Actually, this is almost what \TeX{} is doing to force a line break when one types \bs{\bs{ }}, but the stretching needs to be corrected.
 
 \section{The \emph{glue} and spacing in \LaTeX}
 
@@ -178,7 +178,7 @@ word \hskip 0pt plus 1filll  word  \hskip 0pt plus 10fill word\\
 
 \end{example}
 
-We can see that a greater infinity type neglects the presence of lower infinities. Infinities of the same type will be weighted according to the amount of it in the line. There is just one point that should raise our attention tight now. Why doesn't the infinite stretchability of the first example push the right word to the end of the line like in the other cases? The answer has to do with what \TeX{} does at the end of a paragraph to prevent the last line to stretch. At the end of a paragraph automatically an ``\bs{hskip} {\ttfamily 0pt plus~1fil minus~0pt}'' is inserted to keep the line short. The second word is pushed at its two sides by equally weighted infinite \emph{glue}. That is why it remains near the middle of the line.
+We can see that a greater infinity type neglects the presence of lower infinities. Infinities of the same type will be weighted according to the amount of it in the line. There is just one point that should raise our attention right now. Why doesn't the infinite stretchability of the first example push the right word to the end of the line like in the other cases? The answer has to do with what \TeX{} does at the end of a paragraph to prevent the last line to stretch. At the end of a paragraph automatically an ``\bs{hskip} {\ttfamily 0pt plus~1fil minus~0pt}'' is inserted to keep the line short. The second word is pushed at its two sides by equally weighted infinite \emph{glue}. That is why it remains near the middle of the line.
 
 There are some macros which are shorthand for this infinite stretchable \emph{glue}. For instance \bs{hfil} is defined as \bs{hskip} {\ttfamily 0pt plus~1fil minus~0pt} and equivalently \bs{hfill}, \bs{vfil} and \bs{vfill}. There is no macro for the greatest infinity because it is rarely used. There are also macros to define fixed, i.e., non stretchable/shrinkable \emph{glue}. These are \bs{hspace}\{<\textsf{\itshape dimen}>\} and \bs{vspace}\{<\textsf{\itshape dimen}>\}. The former is defined by \bs{hskip}{\ttfamily~<\textsf{\itshape dimen}> plus~0pt minus~0pt} and the latter is defined equivalently. In this document I have used these macros and also some \emph{glue} to tune the adjustment of the figures. Have a look at them in the source file to see what effect they had in the final layout. 
 
@@ -248,14 +248,14 @@ It is time know to learn some commands that allow to manipulate boxes. Knowing t
   
   \item[\bs{raisebox}\{dimension\}{[}height{]}{[}depth{]}\{contents\}] raises the contents by dimension. This is, the baseline of the box is moved downwards (or upwards if dimension is negative). The resulting box can have the given height and depth.\\ Example:
   \begin{verbatim}
-    \bx{\raisebox{3pt}{Hello}}Hello
-    \bx{\raisebox{-3pt}{Hello}}Hello
-    \bx{\raisebox{3pt}[5pt][2pt]{Hello}}Hello
+    \bx{\raisebox{3pt}{Hello}}\bx{Hello}
+    \bx{\raisebox{-3pt}{Hello}}\bx{Hello}
+    \bx{\raisebox{3pt}[5pt][2pt]{Hello}}\bx{Hello}
   \end{verbatim}
    
-  \bx{\raisebox{3pt}{Hello}}Hello
-  \bx{\raisebox{-3pt}{Hello}}Hello
-  \bx{\raisebox{3pt}[5pt][2pt]{Hello}}Hello
+    \bx{\raisebox{3pt}{Hello}}\bx{Hello}
+    \bx{\raisebox{-3pt}{Hello}}\bx{Hello}
+    \bx{\raisebox{3pt}[5pt][2pt]{Hello}}\bx{Hello}
   
   \item[\bs{rule}{[}raise{]}\{width\}\{thickness\}] Creates a box fully covered with ink. If width or thickness is zero it will not be visible in the document, but the box will occupy some space.\\ Example: \verb!\rule{1em}{1ex} \rule{10em}{0pt} \rule[5pt]{1em}{1ex}!
   
